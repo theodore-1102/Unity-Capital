@@ -1,0 +1,35 @@
+/* Sutanto Capital — Styles
+   See sutanto_demo.html for the complete self-contained version.
+   This file is loaded by the Flask Jinja templates. */
+
+/* Import from the inline styles in the demo HTML — 
+   copy the full <style> block from sutanto_demo.html here for production. */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0f1923;--navy-light:#1a2736;--navy-mid:#243447;--slate:#3a4f63;
+  --steel:#64748b;--ash:#94a3b8;--silver:#cbd5e1;--pearl:#e2e8f0;--snow:#f1f5f9;--white:#fff;
+  --accent:#e04f2e;--accent-dark:#c43d1e;--blue:#2563eb;--blue-light:#3b82f6;
+  --teal:#0d9488;--amber:#d97706;--green:#16a34a;--red:#dc2626;
+  --radius:4px;--radius-lg:6px;
+  --font:'DM Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono','SF Mono',monospace;
+  --shadow:0 1px 3px rgba(15,25,35,.08);
+  --shadow-md:0 2px 8px rgba(15,25,35,.12);
+}
+html{font-size:13px}
+body{font-family:var(--font);background:var(--snow);color:var(--navy);line-height:1.5;-webkit-font-smoothing:antialiased}
+.shell{display:grid;grid-template-columns:220px 1fr;grid-template-rows:52px 1fr;min-height:100vh}
+.topbar{grid-column:1/-1;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--navy-mid)}
+.topbar .logo{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:700;font-size:15px}
+.topbar .logo .mark{width:30px;height:30px;background:var(--accent);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff}
+.topbar .logo span{color:var(--accent)}
+.topbar .meta{color:var(--ash);font-size:11px;display:flex;gap:16px;align-items:center}
+.topbar .meta .dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
+.sidebar{background:var(--navy-light);border-right:1px solid var(--navy-mid);padding:16px 0}
+.sidebar .nav-item{display:flex;align-items:center;gap:10px;padding:10px 20px;font-size:12.5px;font-weight:500;color:var(--ash);cursor:pointer;border-left:3px solid transparent}
+.sidebar .nav-item:hover{background:var(--navy-mid);color:var(--pearl)}
+.sidebar .nav-item.active{background:rgba(224,79,46,.08);color:var(--accent);border-left-color:var(--accent);font-weight:600}
+.sidebar .nav-section{padding:20px 20px 6px;font-size:10px;font-weight:700;color:var(--slate);text-transform:uppercase;letter-spacing:.08em}
+.main{padding:24px;overflow-y:auto;max-height:calc(100vh - 52px)}
+.tab-pane{display:none}.tab-pane.active{display:block}

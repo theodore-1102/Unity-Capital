@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="shell">
+  <header class="topbar">
+    <div class="logo"><div class="mark">SC</div> Sutanto<span>Capital</span></div>
+    <div class="meta">
+      {% if mode == 'live' %}
+        <span class="dot" style="background:var(--amber)"></span> Live Mode
+      {% else %}
+        <span class="dot"></span> Demo Mode
+      {% endif %}
+      &nbsp;|&nbsp; Mar 2026
+    </div>
+  </header>
+  <nav class="sidebar">
+    <div class="nav-section">Dealflow</div>
+    <div class="nav-item active" onclick="switchTab('deals')"><span class="icon">📋</span> Deal Database</div>
+    <div class="nav-item" onclick="switchTab('my-assets')"><span class="icon">💼</span> My PE Assets</div>
+    <div class="nav-section">Intelligence</div>
+    <div class="nav-item" onclick="switchTab('news')"><span class="icon">📰</span> Market News</div>
+    <div class="nav-item" onclick="switchTab('pe-deals')"><span class="icon">🔍</span> Recent PE Deals</div>
+  </nav>
+  <main class="main" id="main-content">
+    <!-- Tab panes rendered by app.js using window.__SC__ data -->
+    <div id="tab-deals" class="tab-pane active"></div>
+    <div id="tab-my-assets" class="tab-pane"></div>
+    <div id="tab-news" class="tab-pane"></div>
+    <div id="tab-pe-deals" class="tab-pane"></div>
+  </main>
+</div>
+{% endblock %}
